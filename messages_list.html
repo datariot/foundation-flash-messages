@@ -1,0 +1,11 @@
+<template name="meteorMessages">
+	{{#each messages}}
+		{{> meteorMessage}}
+	{{/each}}
+</template>
+
+<template name="meteorMessage">
+	<div data-alert class="alert-box {{style}}">
+		{{message}}
+	</div>
+</template>
