@@ -1,4 +1,5 @@
-##Foundation Flash Messages
+foundation-flash-messages
+=========================
 
 A small package for displaying Foundation style flash messages. This is based on https://github.com/andreavaghi/meteor-flash-messages.
 
@@ -21,4 +22,3 @@ For example:
   Meteor.Messages.send('alert', 'There was a problem signing you in.');
   Meteor.Messages.send('info', 'We will be shutting down in 10 minutes.');
   Meteor.Messages.send('success', 'Your account has been updated!');
-```
