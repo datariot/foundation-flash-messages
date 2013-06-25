@@ -1,7 +1,10 @@
 foundation-flash-messages
 =========================
 
-A small package for displaying Foundation style flash messages. This is based on https://github.com/andreavaghi/meteor-flash-messages.
+A small package for displaying Foundation style flash messages. This is based on https://github.com/andreavaghi/meteor-flash-messages. Welcoming any pull requests that add thoughtfully to the package.
+
+##Requirements
+You need to include the (Foundation JS and CSS)[http://foundation.zurb.com/docs/components/alert-boxes.html] to support the alert boxes. You can do this by including them manually or by using (meteor-foundation)[https://atmosphere.meteor.com/package/foundation].
 
 ##Usage
 
