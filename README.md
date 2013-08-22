@@ -7,6 +7,10 @@ A small package for displaying Foundation style flash messages. This is based on
 You need to include the (Foundation JS and CSS)[http://foundation.zurb.com/docs/components/alert-boxes.html] to support the alert boxes. You can do this by including them manually or by using (meteor-foundation)[https://atmosphere.meteor.com/package/foundation].
 
 ##Usage
+Install the package:
+```
+   mrt add foundation-flash-messages
+```
 
 Include the template somewhere in your index.html file:
 ```javascript
@@ -14,14 +18,14 @@ Include the template somewhere in your index.html file:
 ```
 And then send messages:
 ```javascript
-  Meteor.Messages.send(STYLE,MESSAGE);
+  Messages.send(STYLE,MESSAGE);
 ```
 And to clear messages:
 ```javascript
-  Meteor.Messages.clear();
+  Messages.clear();
 ```
 For example:
 ```javascript
-  Meteor.Messages.send('alert', 'There was a problem signing you in.');
-  Meteor.Messages.send('info', 'We will be shutting down in 10 minutes.');
-  Meteor.Messages.send('success', 'Your account has been updated!');
+  Messages.send('alert', 'There was a problem signing you in.');
+  Messages.send('info', 'We will be shutting down in 10 minutes.');
+  Messages.send('success', 'Your account has been updated!');
