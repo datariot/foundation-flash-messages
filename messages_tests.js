@@ -1,15 +1,15 @@
-Tinytest.add("Message collection works", function(test) {
-    test.equal(Meteor.messages.find({}).count(), 0);
+Tinytest.add("message-collection", function(test) {
+    test.equal(messages.find({}).count(), 0);
 
-    Meteor.Messages.send('error', 'A new error!');
-    test.equal(Meteor.messages.find({}).count(), 1);
+    Messages.send('error', 'A new error!');
+    test.equal(messages.find({}).count(), 1);
 
-    Meteor.messages.remove({});
+    messages.remove({});
 });
 
-Tinytest.addAsync("Messages template works", function(test, done) {  
-    Meteor.Messages.send('error', 'A new error!');
-    test.equal(Meteor.messages.find({seen: false}).count(), 1);
+Tinytest.addAsync("message-template", function(test, done) {  
+    Messages.send('error', 'A new error!');
+    test.equal(messages.find({seen: false}).count(), 1);
 
     // render the template
     OnscreenDiv(Spark.render(function() {
@@ -18,11 +18,11 @@ Tinytest.addAsync("Messages template works", function(test, done) {
 
     // wait a few milliseconds
     Meteor.setTimeout(function() {
-        test.equal(Meteor.messages.find({seen: false}).count(), 0);
-        test.equal(Meteor.messages.find({}).count(), 1);
-        Meteor.Messages.clear();
+        test.equal(messages.find({seen: false}).count(), 0);
+        test.equal(messages.find({}).count(), 1);
+        Messages.clear();
 
-        test.equal(Meteor.messages.find({seen: true}).count(), 0);
+        test.equal(messages.find({seen: true}).count(), 0);
         done();
     }, 500);
 });
