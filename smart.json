@@ -1,7 +1,7 @@
 {
 	  "name": "foundation-flash-messages",
 	  "description": "A package to display flash messages based on Foundation to the user based on https://github.com/andreavaghi/meteor-flash-messages.",
-	  "homepage": "https://github.com/datariot/foundation-flash-messages.git",
+	  "homepage": "https://github.com/datariot/foundation-flash-messages",
 	  "author": "David Allen <david@datariot.io>",
 	  "version": "0.1.2",
 	  "git": "https://github.com/datariot/foundation-flash-messages.git"
