@@ -4,7 +4,7 @@ Tinytest.add("message-collection", function(test) {
     Messages.send('error', 'A new error!');
     test.equal(messages.find({}).count(), 1);
 
-    messages.remove({});
+    messages.remove({_id: messages.findOne()._id});
 });
 
 Tinytest.addAsync("message-template", function(test, done) {  
@@ -12,9 +12,7 @@ Tinytest.addAsync("message-template", function(test, done) {
     test.equal(messages.find({seen: false}).count(), 1);
 
     // render the template
-    OnscreenDiv(Spark.render(function() {
-        return Template.meteorMessages();
-    }));
+    UI.insert(UI.render(Template.meteorMessages), document.body);
 
     // wait a few milliseconds
     Meteor.setTimeout(function() {
@@ -23,6 +21,7 @@ Tinytest.addAsync("message-template", function(test, done) {
         Messages.clear();
 
         test.equal(messages.find({seen: true}).count(), 0);
+
         done();
     }, 500);
 });
