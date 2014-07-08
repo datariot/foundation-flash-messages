@@ -6,12 +6,10 @@ messages = new Meteor.Collection("messages");
 Messages = {
 
   send: function(style, message) {
-    console.log("Logging message:", message);
     Meteor.call("messages_insert", style, message);
   },
 
   clear: function() {
-    console.log("Clearing messages");
     Meteor.call("messages_clear");
   }
   
@@ -19,7 +17,6 @@ Messages = {
 
 Meteor.methods({
   messages_clear: function() {
-    console.log("Clearing messages");
     messages.remove({seen: true}); 
   },
 
